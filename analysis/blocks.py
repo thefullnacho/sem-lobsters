@@ -64,23 +64,27 @@ def block_labelling(n, m):
                                         mid={v: f[v] for v in order})
     return None
 
-lines = open(sys.argv[1]).read().splitlines()
-limit = int(sys.argv[2]) if len(sys.argv) > 2 else 10**9
-recs = []
-for line in lines:
-    n, E, lab, eff = parse(line)
-    m = match(n, E)
-    if m: recs.append((eff, n, m))
-recs.sort(key=lambda t: -t[0])
-found = miss = 0; t0 = time.time()
-for eff, n, m in recs[:limit]:
-    r = block_labelling(n, m)
-    if r:
-        found += 1
-        if found <= 5:
-            print("n=%d a=%d b=%d k=%d |P|=%d effort=%d: f(A)=%d leaves %d..%d, f(B)=%d leaves %d..%d, sums from %d, middle %s"
-                  % (n, len(m["LA"]), len(m["LB"]), m["k"], len(m["P"]), eff, r["fA"], *r["LA"], r["fB"], *r["LB"], r["s"], sorted(r["mid"].values())))
-    else:
-        miss += 1
-        print("NO block labelling: n=%d a=%d b=%d k=%d |P|=%d effort=%d" % (n, len(m["LA"]), len(m["LB"]), m["k"], len(m["P"]), eff))
-print("%s: family %d, tested %d, block labelling found %d, none %d, %.0fs" % (sys.argv[1], len(recs), found + miss, found, miss, time.time() - t0))
+def main():
+    lines = open(sys.argv[1]).read().splitlines()
+    limit = int(sys.argv[2]) if len(sys.argv) > 2 else 10**9
+    recs = []
+    for line in lines:
+        n, E, lab, eff = parse(line)
+        m = match(n, E)
+        if m: recs.append((eff, n, m))
+    recs.sort(key=lambda t: -t[0])
+    found = miss = 0; t0 = time.time()
+    for eff, n, m in recs[:limit]:
+        r = block_labelling(n, m)
+        if r:
+            found += 1
+            if found <= 5:
+                print("n=%d a=%d b=%d k=%d |P|=%d effort=%d: f(A)=%d leaves %d..%d, f(B)=%d leaves %d..%d, sums from %d, middle %s"
+                      % (n, len(m["LA"]), len(m["LB"]), m["k"], len(m["P"]), eff, r["fA"], *r["LA"], r["fB"], *r["LB"], r["s"], sorted(r["mid"].values())))
+        else:
+            miss += 1
+            print("NO block labelling: n=%d a=%d b=%d k=%d |P|=%d effort=%d" % (n, len(m["LA"]), len(m["LB"]), m["k"], len(m["P"]), eff))
+    print("%s: family %d, tested %d, block labelling found %d, none %d, %.0fs" % (sys.argv[1], len(recs), found + miss, found, miss, time.time() - t0))
+
+if __name__ == '__main__':
+    main()

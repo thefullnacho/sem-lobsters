@@ -59,3 +59,22 @@ path (length 2 or 3 in 414 of the hardest 500), plus ONE small pendant subtree (
 off a connector vertex. Without that pendant it is a caterpillar (known super edge-magic); the single
 pendant on the connector is what makes it hard. Working name: a double broom with a pendant on the
 connector, close to the subdivided double stars of [2037].
+
+## Block labellings (2026-11-11 evening)
+
+Idea: a labelling where each big star's leaves take one block of consecutive labels, so their edge sums
+are one consecutive run and only the small middle (connector + pendant) has to fit around them. That is
+the shape of a construction one can prove.
+
+- Observed family (two stars with >= 4 leaves each, pendant <= n/3): n = 24: 13 of 13 have one;
+  n = 25: 542 of 543 (the exception: a = 9, b = 6, k = 1, |P| = 7). The 20 hardest n = 25 trees, which
+  took the plain search up to 1.4e10 nodes, take seconds this way. Frequent shape: f(A) = 1 with A's
+  leaves in a high block, B's leaves from 2 up, f(B) high.
+- Constructed sweep a, b <= 7, k <= 2, all 8 pendants with <= 4 vertices: 224 of 240 have block
+  labellings. All 16 failures have k = 1 (one connector vertex) carrying a 3- or 4-vertex pendant,
+  mostly K_{1,3}. Two separate searches (`blocks.py`, `gblocks.py` with t = 4) agree on the same 16.
+- Forcing blocks on every leaf group is too strict (58 failures); blocks only on stars with >= 4 leaves.
+- Running: sweep a, b <= 12, k <= 4 (`notes/sweep_a12_k4_t4.txt`).
+
+Candidate statement to aim at: for k >= 2 (connector of length >= 3), D(a, b, k, i; P) with small P has a
+block super edge-magic labelling for all a, b >= 4, with an explicit formula; k = 1 needs separate cases.
