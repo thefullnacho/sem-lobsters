@@ -126,3 +126,13 @@ shapes have any alpha-labelling at all.
 - Full alpha-labelling existence for the 12 uncovered pendant shapes, k = 2, (a, b) in {(4,4), (5,4), (5,5)}:
   36 of 36 trees are alpha-trees (exhaustive C search pinning each vertex to 0; witnesses re-checked).
   So the family looks alpha throughout; Lemma 2.1 with star pieces explains only 5 of 17 shapes.
+
+## First explicit formula (2026-11-11 night): k = 2, pendant = one edge r-s hung on x1
+
+q = a + b + 5. A = 0; A's leaves q-a+1..q; r = 1; x2 = 3; B's leaves {2} U {4..b+2}; B = b+3; s = b+4;
+x1 = b+5. Dark labels 0..b+2 (lambda = b+2). Differences: B-leaves {1..b-1, b+1}, x2-B b, x1-x2 b+2,
+r-s b+3, x1-r b+4, A-x1 b+5, A-leaves b+6..q: each of 1..q once. Valid for a >= 1, b >= 2.
+`analysis/formula_p2.py`: checked as alpha and (after l -> lambda+1-l, u -> u+1) as super edge-magic for
+a = 1..60, b = 2..60, 0 failures. This shape is NOT reached by Lemma 2.1 with star pieces.
+Found by reading the lexicographically first alpha-labelling from the exhaustive search at a, b = 4..7.
+Note: the tree is a lobster, so check the alpha-lobster literature for it before claiming anything.
