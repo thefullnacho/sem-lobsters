@@ -136,3 +136,23 @@ r-s b+3, x1-r b+4, A-x1 b+5, A-leaves b+6..q: each of 1..q once. Valid for a >= 
 a = 1..60, b = 2..60, 0 failures. This shape is NOT reached by Lemma 2.1 with star pieces.
 Found by reading the lexicographically first alpha-labelling from the exhaustive search at a, b = 4..7.
 Note: the tree is a lobster, so check the alpha-lobster literature for it before claiming anything.
+
+## Literature (Alex's research session, 2026-11-11 night)
+
+- No source found giving alpha-labellings for double stars with a pendant on the connector or for
+  two-leg lobsters: the 12 uncovered shapes look new.
+- Diameter-4 trees that are not caterpillars have no alpha-labelling: stated in Stefanec 2009 (student
+  thesis, Bratislava), next to Huang-Kotzig-Rosa 1982, uncredited. Research session's exhaustive check:
+  all 58 such trees up to 12 vertices, none alpha. With k = 1, a pendant that is a star hung by its centre
+  (P2, P3mid, K13centre) gives exactly such a tree, so those can never be alpha; their SEM labellings
+  are non-alpha.
+- Luiz, Campos, Richter 2019 (alpha-lobsters): keywords include maximum degree 3, likely not our stars.
+- Krisnawati et al.: SEM deficiency of subdivided double stars, not alpha.
+- Barrientos 2019 (lobsters): joins diameter-4 caterpillars centre to centre; our shape does not fit.
+
+## One-vertex connector, full alpha test (partial, `full_alpha.py 1 5`)
+
+Diameter-4 cases (P2, P3mid, K13centre) all NO, as the theorem predicts. Also NO at diameter >= 5,
+where the theorem says nothing: P3end (diam 5), the depth-2 pendant P=6 (diam 5), P=8 (diam 6).
+If the search is right, these are non-alpha trees beyond diameter 4. Validating alpha_fix first
+(`validate_alpha.py`: brute force n <= 8, caterpillars and diameter-4 facts n <= 12).
