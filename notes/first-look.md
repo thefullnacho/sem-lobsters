@@ -34,3 +34,28 @@ No caterpillars anywhere (the ELNR construction removes them first).
 - Isolate the double-star-with-pendants family, look for a rule in its labellings (where the hubs'
   labels sit, how leaf labels pair with edge sums).
 - Literature check on super edge-magic lobsters and double stars with pendant paths.
+
+## Named families (Alex's research session flagged banana trees, firecrackers, double stars)
+
+DS6 status for super edge-magic: double stars and bistars are caterpillars, so Kotzig and Rosa cover them.
+Banana trees: only "various classes" (Swaminathan and Jeyanthi [3843]; Hussain, Baskoro and Slamin
+[1475]); Ahmad, Ali and Baskoro [106] pose open problems on subdivided banana trees. Setiawan, Sugeng,
+Silaban and Riama [3416] "gave the super edge magic total labelings for banana trees, firecrackers":
+check whether that is all of them or some. Krisnawati, Ngurah, Hidayat and Alghofari [2037]: some
+subdivisions of double stars have zero super edge-magic deficiency (closest to our family).
+
+`analysis/families.py` (tested on hand-built trees; a 3-star firecracker is also a banana tree):
+
+| n | leftovers | firecracker | banana / ext. banana | none |
+|---|---|---|---|---|
+| 23 | 301 | 2 | 0 | 299 |
+| 24 | 1,012 | 3 | 0 | 1,009 |
+| 25 | 23,458 | 147 | 49 | 23,262 |
+
+## The hard family, precisely
+
+Top trees at n = 25: two all-leaf stars (centre degrees 8 to 11) whose centres are joined by a short
+path (length 2 or 3 in 414 of the hardest 500), plus ONE small pendant subtree (2 to 8 vertices) hanging
+off a connector vertex. Without that pendant it is a caterpillar (known super edge-magic); the single
+pendant on the connector is what makes it hard. Working name: a double broom with a pendant on the
+connector, close to the subdivided double stars of [2037].
