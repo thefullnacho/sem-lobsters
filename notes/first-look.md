@@ -166,3 +166,8 @@ it, all satisfy Cor 4.2 (2), (3), and our exhaustive search finds none of them a
 On our family (a, b in 4..9): fires only for k = 1 with pendant P2 or K13centre and a, b both odd: these
 are diameter-4 non-caterpillars, already non-alpha. Never fires for the beyond-diameter-4 non-alpha shapes
 P=2, 6, 8, 9 (one-vertex connector), nor for any k = 2 tree. So those need a new argument.
+
+## Block sweep a, b <= 12, k <= 4 (stopped at its 2 h limit, 21:14, partway through a = 11)
+`notes/sweep_a12_k4_t4.txt`: 85 without a block labelling (k = 1: 30 K13centre, 19 K13leaf, 12 P3end;
+k = 3: 24 P3mid), 110 capped by the Python search. Incomplete and superseded by the alpha analysis;
+kept for the record. Redo in C only if block labellings come back into the argument.
