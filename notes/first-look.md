@@ -114,3 +114,12 @@ Better split for k = 2: pendant into T1 (T1 = star(A) + leaf x carrying P, needs
 T2 = edge x-y, T3 = star(B) + y. Running (`analysis/barrientos_t1.py`).
 
 The 16 block failures are super edge-magic: sem_direct (C, v3 pipeline) labelled all 16, re-checked.
+
+## Lemma 2.1 with the pendant in an outer piece (k = 2), exhaustive C search (`analysis/alpha_fix.c`)
+
+T1 = star(A) + leaf x carrying P, x pinned to lambda_1; or symmetrically T3 = star(B) + leaf y carrying P,
+y pinned to 0 (case 2 after complementing). Every YES witness re-checked as an alpha-labelling in Python.
+Result does not depend on the star size (a = 4..9 identical per shape), and T1 and T3 agree:
+5 of the 17 rooted pendants with <= 5 vertices work (indices 0, 5, 10, 13, 14 in rooted_trees(5)), 12 do not.
+So the lemma covers k = 2 only for those shapes. Running: whether the full trees with the other 12
+shapes have any alpha-labelling at all.
