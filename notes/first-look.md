@@ -123,3 +123,6 @@ Result does not depend on the star size (a = 4..9 identical per shape), and T1 a
 5 of the 17 rooted pendants with <= 5 vertices work (indices 0, 5, 10, 13, 14 in rooted_trees(5)), 12 do not.
 So the lemma covers k = 2 only for those shapes. Running: whether the full trees with the other 12
 shapes have any alpha-labelling at all.
+- Full alpha-labelling existence for the 12 uncovered pendant shapes, k = 2, (a, b) in {(4,4), (5,4), (5,5)}:
+  36 of 36 trees are alpha-trees (exhaustive C search pinning each vertex to 0; witnesses re-checked).
+  So the family looks alpha throughout; Lemma 2.1 with star pieces explains only 5 of 17 shapes.

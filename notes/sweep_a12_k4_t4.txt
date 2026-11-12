@@ -88,3 +88,7 @@ NONE a=9 b=7 k=1 i=1 K13centre n=23
 CAPPED a=9 b=7 k=3 i=1 K13centre n=25
 NONE a=9 b=7 k=3 i=3 P3mid n=24
 CAPPED a=9 b=7 k=4 i=1 P4inner n=26
+CAPPED a=9 b=7 k=4 i=1 K13centre n=26
+CAPPED a=9 b=7 k=4 i=1 K13leaf n=26
+CAPPED a=9 b=7 k=4 i=2 P4inner n=26
+CAPPED a=9 b=7 k=4 i=2 K13centre n=26
