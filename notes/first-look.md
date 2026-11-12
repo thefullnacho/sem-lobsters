@@ -156,3 +156,13 @@ Diameter-4 cases (P2, P3mid, K13centre) all NO, as the theorem predicts. Also NO
 where the theorem says nothing: P3end (diam 5), the depth-2 pendant P=6 (diam 5), P=8 (diam 6).
 If the search is right, these are non-alpha trees beyond diameter 4. Validating alpha_fix first
 (`validate_alpha.py`: brute force n <= 8, caterpillars and diameter-4 facts n <= 12).
+
+## Parity property (Brinkmann et al. Sec. 4, exact statement via research session), `analysis/parity.py`
+
+Property = (1) each bipartition class has one degree parity, and (2) vertex parity != edge parity, where
+edge parity = q(q+1)/2 mod 2 and vertex parity = sum deg(v) l(v) mod 2 (checked for both choices of dark
+class). Cor 4.2: then no alpha-labelling, odd n, an even-degree class. Sanity: 7 trees with n <= 14 have
+it, all satisfy Cor 4.2 (2), (3), and our exhaustive search finds none of them alpha.
+On our family (a, b in 4..9): fires only for k = 1 with pendant P2 or K13centre and a, b both odd: these
+are diameter-4 non-caterpillars, already non-alpha. Never fires for the beyond-diameter-4 non-alpha shapes
+P=2, 6, 8, 9 (one-vertex connector), nor for any k = 2 tree. So those need a new argument.
