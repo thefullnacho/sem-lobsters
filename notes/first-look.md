@@ -97,3 +97,20 @@ randomised search, 300 nodes x 200 attempts, so trees falling through it says no
 
 Working view: the family may simply have alpha-labellings. That moves the literature check to
 alpha-labellings of lobsters / two-star trees before any proof is written.
+
+## Barrientos 2025, Lemma 2.1 (refs/, read from the PDF)
+
+Utilitas Math. 123 (2025) 195-204, doi 10.61091/um123-15. Alpha-trees T1, T2, T3 (lambda_i = largest
+dark label): glue T1's vertex lambda_1 to T2's vertex 0; then either T2's lambda_2 to T3's 0 (case 1) or
+T2's lambda_2 + 1 to T3's top label n_3 - 1 (case 2; the paper writes "n_3" in shifted terms). Result is an
+alpha-tree. Remark 2.2: T3 may be any graceful tree, but then the result is only graceful.
+
+Applied with T1 = star(A) + x_1, T2 = connector x_1..x_k + pendant, T3 = star(B) + x_k
+(`analysis/barrientos.py`): T2 has the required labelling (x_1 = 0, x_k = lambda_2 or lambda_2 + 1) only
+when the pendant is a single vertex; 0 of 144 (pendant, position) pairs with |P| = 2..5, k = 2..4.
+Hand check: k = 2, |P| = 2 forces y = 2 and two edges of weight 2.
+
+Better split for k = 2: pendant into T1 (T1 = star(A) + leaf x carrying P, needs x = lambda_1),
+T2 = edge x-y, T3 = star(B) + y. Running (`analysis/barrientos_t1.py`).
+
+The 16 block failures are super edge-magic: sem_direct (C, v3 pipeline) labelled all 16, re-checked.
