@@ -138,3 +138,8 @@ CAPPED a=10 b=6 k=4 i=2 K13centre n=26
 NONE a=10 b=7 k=1 i=1 P3end n=23
 NONE a=10 b=7 k=1 i=1 K13centre n=24
 NONE a=10 b=7 k=1 i=1 K13leaf n=24
+CAPPED a=10 b=7 k=3 i=1 K13centre n=26
+NONE a=10 b=7 k=3 i=3 P3mid n=25
+CAPPED a=10 b=7 k=4 i=1 P4inner n=27
+CAPPED a=10 b=7 k=4 i=1 K13centre n=27
+CAPPED a=10 b=7 k=4 i=1 K13leaf n=27

@@ -1,0 +1,11 @@
+k=1 P=8 a=5 b=4 -> NO
+k=1 P=16 a=5 b=4 -> NO
+k=1 P=7 a=5 b=5 -> NO
+k=1 P=15 a=5 b=5 -> NO
+k=1 P=15 a=6 b=4 -> NO
+k=1 P=7 a=6 b=4 -> NO
+k=1 P=9 a=6 b=4 -> NO
+k=1 P=8 a=5 b=5 -> NO
+k=1 P=8 a=6 b=4 -> NO
+k=1 P=16 a=5 b=5 -> NO
+k=1 P=16 a=6 b=4 -> NO

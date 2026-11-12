@@ -12,13 +12,15 @@ NO = search finished, none exists; CAP = undecided (rerun at 2e10 in `k1_capped_
 | 4 | [(0, 1), (0, 2), (1, 3)] | 4 | YES | YES | YES | YES |
 | 5 | [(1, 2), (1, 0), (2, 3)] | 4 | YES | YES | YES | YES |
 | 6 | [(0, 1), (1, 2), (1, 3)] | 4 | NO | NO | NO | NO |
-| 7 | [(1, 0), (0, 2), (0, 3)] | 4 | NO | NO | CAP | CAP |
-| 8 | [(0, 1), (0, 2), (1, 3), (3, 4)] | 5 | NO | CAP | CAP | CAP |
-| 9 | [(1, 0), (1, 3), (0, 2), (2, 4)] | 5 | NO | YES | YES | CAP |
+| 7 | [(1, 0), (0, 2), (0, 3)] | 4 | NO | NO | NO* | NO* |
+| 8 | [(0, 1), (0, 2), (1, 3), (3, 4)] | 5 | NO | NO* | NO* | NO* |
+| 9 | [(1, 0), (1, 3), (0, 2), (2, 4)] | 5 | NO | YES | YES | NO* |
 | 10 | [(1, 2), (1, 0), (2, 3), (3, 4)] | 5 | YES | YES | YES | YES |
 | 11 | [(0, 1), (0, 2), (1, 3), (1, 4)] | 5 | YES | YES | YES | YES |
 | 12 | [(1, 0), (1, 4), (0, 2), (0, 3)] | 5 | YES | YES | YES | YES |
 | 13 | [(1, 2), (1, 0), (2, 3), (2, 4)] | 5 | YES | YES | YES | YES |
 | 14 | [(2, 1), (2, 4), (1, 0), (1, 3)] | 5 | YES | YES | YES | YES |
-| 15 | [(0, 1), (1, 2), (1, 3), (1, 4)] | 5 | NO | NO | CAP | CAP |
-| 16 | [(1, 0), (0, 2), (0, 3), (0, 4)] | 5 | NO | CAP | CAP | CAP |
+| 15 | [(0, 1), (1, 2), (1, 3), (1, 4)] | 5 | NO | NO | NO* | NO* |
+| 16 | [(1, 0), (0, 2), (0, 3), (0, 4)] | 5 | NO | NO* | NO* | NO* |
+
+\* decided at cap 2e10 per pinned vertex (`notes/k1_capped_rerun.txt`). No CAP left.
