@@ -1,0 +1,14 @@
+NONE a=4 b=4 k=1 i=1 K13centre n=15
+NONE a=4 b=4 k=1 i=1 K13leaf n=15
+NONE a=5 b=4 k=1 i=1 K13centre n=16
+NONE a=5 b=5 k=1 i=1 K13centre n=17
+NONE a=5 b=5 k=1 i=1 K13leaf n=17
+CAPPED a=5 b=5 k=4 i=2 K13centre n=20
+NONE a=6 b=4 k=1 i=1 K13centre n=17
+NONE a=6 b=4 k=3 i=3 P3mid n=18
+NONE a=6 b=5 k=1 i=1 K13centre n=18
+CAPPED a=6 b=5 k=4 i=2 K13centre n=21
+NONE a=6 b=6 k=1 i=1 K13centre n=19
+NONE a=6 b=6 k=1 i=1 K13leaf n=19
+CAPPED a=6 b=6 k=4 i=1 K13centre n=22
+CAPPED a=6 b=6 k=4 i=1 K13leaf n=22

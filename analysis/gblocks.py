@@ -4,7 +4,7 @@ leaves on v get one block of consecutive labels. Leaf edge sums at v are then on
 block_search(n, adj) -> dict or None. Core = non-leaf vertices (for a star, the centre).
 Uses the complement symmetry f -> n + 1 - f to keep f(core[0]) <= (n + 1) / 2.
 """
-def block_search(n, adj, node_cap=5_000_000, t=4):
+def block_search(n, adj, node_cap=5_000_000, t=4, low_side=None):
     deg = [len(a) for a in adj]
     # blocks only on vertices with >= t leaves; every other vertex is labelled on its own
     leaves = {v: [w for w in adj[v] if deg[w] == 1] for v in range(n)}
@@ -18,6 +18,14 @@ def block_search(n, adj, node_cap=5_000_000, t=4):
             if y not in seen and y not in inblock:
                 seen.add(y); order.append(y)
     full = (1 << (n + 1)) - 2          # labels 1..n
+    col = [-1] * n; col[0] = 0; qq = [0]
+    for x in qq:
+        for y in adj[x]:
+            if col[y] < 0: col[y] = 1 - col[x]; qq.append(y)
+    nlow = sum(1 for v in range(n) if col[v] == low_side) if low_side is not None else None
+    def okrange(v, lab):
+        if low_side is None: return True
+        return (lab <= nlow) == (col[v] == low_side)
     f = {}; blk = {}; nodes = [0]
     sums_used = set()
     lo_hi = [10**9, -1]
@@ -42,9 +50,10 @@ def block_search(n, adj, node_cap=5_000_000, t=4):
         if i == len(order):
             return used == full and len(sums_used) == n - 1
         v = order[i]; L = len(leaves[v])
-        cand = range(1, n + 1) if i else range(1, (n + 1) // 2 + 1)
+        cand = range(1, n + 1) if (i or low_side is not None) else range(1, (n + 1) // 2 + 1)
         for lab in cand:
             if used >> lab & 1: continue
+            if not okrange(v, lab): continue
             new = [lab + f[w] for w in adj[v] if w in f]
             old = place_sums(new)
             if old is None: continue
@@ -56,6 +65,7 @@ def block_search(n, adj, node_cap=5_000_000, t=4):
                 for st in range(1, n - L + 2):
                     bits = ((1 << L) - 1) << st
                     if u2 & bits: continue
+                    if leaves[v] and not (okrange(leaves[v][0], st) and okrange(leaves[v][0], st + L - 1)): continue
                     bs = list(range(lab + st, lab + st + L))
                     o2 = place_sums(bs)
                     if o2 is None: continue

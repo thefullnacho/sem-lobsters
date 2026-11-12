@@ -78,3 +78,22 @@ the shape of a construction one can prove.
 
 Candidate statement to aim at: for k >= 2 (connector of length >= 3), D(a, b, k, i; P) with small P has a
 block super edge-magic labelling for all a, b >= 4, with an explicit formula; k = 1 needs separate cases.
+
+## Colour-class split (research session's point, 2026-11-11 night)
+
+Split = one colour class takes labels 1..|class|; such a super edge-magic labelling is an alpha-labelling
+with the high labels reversed (the v3 pipeline's alpha_sem stage used exactly this map; it was a quick
+randomised search, 300 nodes x 200 attempts, so trees falling through it says nothing about alpha).
+
+- Stored retry labellings: split in 2/301 (n = 23), 4/1,012 (24), 22/23,458 (25). Random labellings, so
+  uninformative either way.
+- Sweep a, b <= 7, k <= 2 (`notes/splitcheck_a7_k2.txt`): 144 split block labellings, 80 block but no split
+  block labelling, 16 no block labelling. So block labellings are NOT always alpha in disguise.
+- k = 1 does not rule out the split: pendants K1 and P4end split in all 10 cases.
+- Where blocks fail to split: k = 2 only for pendants that are stars hung by their centre (P2, P3mid,
+  K13centre) and only when a != b (6 of 10 pairs). With the block rule dropped, a split labelling (an
+  alpha-labelling) exists in all 6 tested.
+- Open: pendant sizes up to 8 and their shapes (sweep covers <= 4 vertices).
+
+Working view: the family may simply have alpha-labellings. That moves the literature check to
+alpha-labellings of lobsters / two-star trees before any proof is written.
