@@ -171,3 +171,17 @@ P=2, 6, 8, 9 (one-vertex connector), nor for any k = 2 tree. So those need a new
 `notes/sweep_a12_k4_t4.txt`: 85 without a block labelling (k = 1: 30 K13centre, 19 K13leaf, 12 P3end;
 k = 3: 24 P3mid), 110 capped by the Python search. Incomplete and superseded by the alpha analysis;
 kept for the record. Redo in C only if block labellings come back into the argument.
+
+## Bigger stars, one-vertex connector (2026-11-13)
+
+First run (`alpha_fix` without symmetry breaking, cap 5e10): 96 of 120 cases capped. Fix: sibling leaves
+(same parent) get increasing labels, and label 0 is pinned on one leaf per sibling class (swapping sibling leaves
+is an automorphism, so nothing is lost). Re-validated: brute force n <= 8, all 557 caterpillars and 58 diameter-4
+non-caterpillars n <= 12, and all 68 cells of `k1_alpha_table.md` identical; the old table re-decides in < 1 s.
+Rerun (`notes/k1_big_v2.txt`, 140 cases, a, b in 4..10 with b <= a), agrees with all 24 first-run decisions:
+- P = 2, 6, 15 (small star hung through one extra vertex): non-alpha in all 28 size pairs.
+- P = 8: non-alpha in every decided pair.
+- P = 9: size-dependent; non-alpha at b = 4 (except a = 5) and when a, b are both even; alpha otherwise.
+Orders here are n = a + b + 2 + |P| <= 27, so nearly all sit inside Brinkmann et al.'s exhaustive range
+(all trees up to 26 vertices): the individual verdicts are checkable against their data; what could be new is
+the family statement and a proof for all star sizes.
