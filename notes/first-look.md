@@ -200,3 +200,5 @@ Applied (research session's working, checked): k = 1, pendant x - r - c with t l
 A a leaf of x: V1 = {A, B, r, t leaves}, V2 = {x, c, b leaves}; threshold a >= (t + 2)(b + 3). P = 2 (t = 1),
 b = 4: a >= 21 (n = 31). So: P = 2, b = 4, a = 4..21 all non-alpha => non-alpha for every a >= 4.
 Run (`/data/sem-lobsters/p2_b4.out`, cap 1e14): a = 4..15 NO so far; 16..21 running.
+Final for the a, b <= 10 rerun: P = 2, 6, 15 non-alpha in all 28 pairs; P = 8 non-alpha in 27, (10, 10) capped at
+5e10; P = 9 alpha in 16, non-alpha in 12 (including (10, 10), both even, fitting the apparent parity rule).
