@@ -202,3 +202,15 @@ b = 4: a >= 21 (n = 31). So: P = 2, b = 4, a = 4..21 all non-alpha => non-alpha 
 Run (`/data/sem-lobsters/p2_b4.out`, cap 1e14): a = 4..15 NO so far; 16..21 running.
 Final for the a, b <= 10 rerun: P = 2, 6, 15 non-alpha in all 28 pairs; P = 8 non-alpha in 27, (10, 10) capped at
 5e10; P = 9 alpha in 16, non-alpha in 12 (including (10, 10), both even, fitting the apparent parity rule).
+
+## RESULT (2026-11-13): an infinite non-alpha family, computer-assisted
+
+Tree T(a): stars A (a leaves) and B (4 leaves) joined through one vertex x (A - x - B), with a 3-vertex path
+x - r - c - s hung on x. Exhaustive search (`alpha_fix`, symmetry-broken, validated): T(1) is alpha; T(a) is
+non-alpha for every a = 2..21 (`notes/p2_b4.txt`, cap 1e14, none capped; a = 21 finished 2026-11-13 13:27).
+Lemma 5.1 of Brinkmann et al. 2012 with v = A, threshold (t + 2)(b + 3) = 21, gives alphadef(T(a)) = alphadef(T(21))
+> 0 for all a >= 21. Hence: T(a) has no alpha-labelling for every a >= 2 (diameter 5, max degree up to a + 1;
+parity property never applies; not in Brinkmann et al.'s families per the research session).
+Before claiming it: an independent second decider (different method, no shared code, e.g. a CP-SAT encoding)
+must re-decide a = 2..21, as was done for Gallai n = 12; and a literature check for this exact tree.
+Same route is open for P = 6 (threshold a >= 28) and P = 15 (a >= 35) at b = 4, and for other fixed b.
