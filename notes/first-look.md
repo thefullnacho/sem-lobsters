@@ -185,3 +185,18 @@ Rerun (`notes/k1_big_v2.txt`, 140 cases, a, b in 4..10 with b <= a), agrees with
 Orders here are n = a + b + 2 + |P| <= 27, so nearly all sit inside Brinkmann et al.'s exhaustive range
 (all trees up to 26 vertices): the individual verdicts are checkable against their data; what could be new is
 the family statement and a proof for all star sizes.
+
+## Route to an infinite family: Brinkmann et al. 2012, Lemma 5.1 (refs/brinkmann2012-alpha-deficit.pdf)
+
+Brinkmann, Crevals, Melot, Rylands, Steffen, "alpha-Labelings and the Structure of Trees with Nonzero alpha-Deficit",
+DMTCS 14(1) (2012) 159-174, doi 10.46298/dmtcs.569. Research session: the paper has no diameter-5, double-star or
+two-star results; its infinite non-alpha families are comets, subdivided odd-degree trees and a max-degree-3 series;
+its non-alpha lists are not published. Read here from the PDF:
+- Lemma 5.1 (verbatim): T with classes V1, V2, v in V1, T_p = T plus p pendant vertices at v. For all
+  p, p' >= (|V1| - 1)(|V2| + 1): alphadef(T_p) = alphadef(T_p').
+- alphadef = n - 1 - (max distinct edge labels over bipartite labelings), so alphadef = 0 iff an alpha-labelling
+  exists. The proof's "V1 gets the low labels" is without loss: n - 1 - l swaps the classes, same edge labels.
+Applied (research session's working, checked): k = 1, pendant x - r - c with t leaves on c, v = A, base T with
+A a leaf of x: V1 = {A, B, r, t leaves}, V2 = {x, c, b leaves}; threshold a >= (t + 2)(b + 3). P = 2 (t = 1),
+b = 4: a >= 21 (n = 31). So: P = 2, b = 4, a = 4..21 all non-alpha => non-alpha for every a >= 4.
+Run (`/data/sem-lobsters/p2_b4.out`, cap 1e14): a = 4..15 NO so far; 16..21 running.
