@@ -214,3 +214,15 @@ parity property never applies; not in Brinkmann et al.'s families per the resear
 Before claiming it: an independent second decider (different method, no shared code, e.g. a CP-SAT encoding)
 must re-decide a = 2..21, as was done for Gallai n = 12; and a literature check for this exact tree.
 Same route is open for P = 6 (threshold a >= 28) and P = 15 (a >= 35) at b = 4, and for other fixed b.
+
+## Correction (2026-11-13, research session; Theorem 1.2 checked from the PDF)
+
+Theorem 1.2 (Brinkmann et al. 2012): for all k, d and n >= k^2 + k, the number of trees with n vertices, alphadef = d
+and maximum degree n - k is the same; its proof is Lemma 5.1 on the big vertex, i.e. our argument. Our T(a) has
+n = a + 10 and maximum degree a + 1 = n - 9, so it is in the k = 9 class; Brinkmann's slides give 80 non-alpha
+trees at k = 9 for n = 18..25 as "constant series" (a smallest tree plus a fan of leaves). So T(a) is very likely
+one of those series: enumerated, never drawn, lists not public. Not a new infinite family. What is ours: the
+explicit description and the exact boundary a >= 2. Open and outside their theorem: both stars growing together
+(max degree about n/2); our data has P = 2, 6, 15 non-alpha for all a = b <= 10; needs a two-vertex Lemma 5.1.
+Plan: research session drafts an email to Brinkmann (Alex sends): is T(a) in the k = 9 series; ask for their
+program (it would also serve as an independent second decider). Independent CP-SAT decider on hold until then.
