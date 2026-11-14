@@ -1,0 +1,30 @@
+fid 440 b=29 a=56 n=94: deficit 0, predicted 0 OK
+fid 440 b=29 a=57 n=95: deficit 0, predicted 0 OK
+fid 440 b=29 a=58 n=96: deficit 0, predicted 0 OK
+fid 440 b=29 a=59 n=97: deficit 1, predicted 1 OK
+fid 440 b=30 a=59 n=98: deficit 0, predicted 0 OK
+fid 440 b=29 a=60 n=98: deficit 1, predicted 1 OK
+fid 440 b=30 a=61 n=100: deficit 0, predicted 0 OK
+fid 440 b=31 a=62 n=102: deficit 0, predicted 0 OK
+fid 440 b=31 a=63 n=103: deficit 0, predicted 0 OK
+fid 440 b=31 a=64 n=104: deficit 0, predicted 0 OK
+fid 440 b=30 a=80 n=119: deficit 0, predicted 0 OK
+fid 600 b=30 a=14 n=53: deficit 0, predicted 0 OK
+fid 600 b=30 a=15 n=54: deficit 1, predicted 1 OK
+fid 600 b=30 a=16 n=55: deficit 0, predicted 0 OK
+fid 600 b=30 a=17 n=56: deficit 0, predicted 0 OK
+fid 600 b=29 a=50 n=88: deficit 0, predicted 0 OK
+fid 600 b=29 a=51 n=89: deficit 1, predicted 1 OK
+fid 600 b=29 a=54 n=92: deficit 0, predicted 0 OK
+fid 600 b=29 a=55 n=93: deficit 1, predicted 1 OK
+fid 600 b=29 a=56 n=94: deficit 1, predicted 1 OK
+fid 600 b=29 a=57 n=95: deficit 1, predicted 1 OK
+fid 600 b=31 a=58 n=98: deficit 0, predicted 0 OK
+fid 600 b=31 a=59 n=99: deficit 1, predicted 1 OK
+fid 600 b=30 a=60 n=99: deficit 0, predicted 0 OK
+fid 600 b=31 a=60 n=100: deficit 1, predicted 1 OK
+fid 600 b=31 a=61 n=101: deficit 1, predicted 1 OK
+fid 600 b=30 a=80 n=119: deficit 0, predicted 0 OK
+mismatches: 0
+
+[exited with code 0]

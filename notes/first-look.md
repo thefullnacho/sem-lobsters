@@ -330,3 +330,12 @@ Moving boundaries: 4 of 635 families. New at c = 9:
   Clue: the period equals the number of leaves on that one core vertex.
 - fid 600: boundary 2b - 3 for odd b >= 5; a fixed point (a = 6) for even b >= 8.
 Not yet done for the two new families: checks past n = 62 (128-bit program) and the middle region.
+Families 440 and 600 past 62 vertices (2026-11-14, `notes/fam440_600_past62.txt`), predictions stated before the run:
+- 440: non-alpha iff b = 2 (mod 3) and a >= 2b + 1 (b >= 2).
+- 600 (b >= 5): b odd -> non-alpha iff (a odd and a >= 5) or a >= 2b - 2; b even -> non-alpha iff a odd and
+  5 <= a <= 2*floor(b/4) + 1.
+27 trees at b = 29, 30, 31, n up to 119: 27 of 27 as predicted.
+Period test, fid 126's core with t leaves on vertex 5 (`analysis/period_test.py`, t = 1..6, b <= 20): wherever a
+boundary exists it is at a = 2b + 1; which b have one is periodic in b with period t for b >= 5: t=1 none; t=2
+b = 1 (mod 2); t=3 b = 2 (mod 3); t=4 none; t=5 b = 1, 2, 4 (mod 5); t=6 b = 1, 2, 3, 5 (mod 6). Candidate "t does not
+divide b(b + 2)" fits t = 1, 2, 3, 5, 6 for larger b but not t = 4 or some small b: unconfirmed. Wider test running.
