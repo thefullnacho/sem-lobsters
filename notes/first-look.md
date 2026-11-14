@@ -318,3 +318,15 @@ Middle region closed (2026-11-14, `analysis/middle_scan.py`): every family, orde
 predictions (stable value for the 229 ordinary families; exact rules for fid 126 and 206, including 206's b-odd rule
 "non-alpha iff a even and a <= 2*ceil((b - 1)/4)", which predicts a = 30, b = 59 non-alpha). Remaining untested:
 boundaries that begin beyond about 60 leaves on both stars, and cores with more than 8 vertices.
+
+## Cores up to 9 vertices (2026-11-14)
+
+635 families, 894,701 trees, n <= 62 (`notes/landscape_c9_n62_summary.txt`). All 231 c <= 8 families reproduce with
+identical tables. Classes: ALPHA 552, CONST 37, THRESH 19, EVENTUAL 27; max deficit 1. Settling point for c = 9:
+376 of 404 at m = 1, the rest by m = 8, plus three outliers (one at 18, two none visible).
+Moving boundaries: 4 of 635 families. New at c = 9:
+- fid 440: fid 126's core with one more leaf on vertex 5 (3 leaves instead of 2). Boundary a >= 2b + 1 at
+  b = 2, 5, 8, 11 (b = 2 mod 3), and at b = 1 (a >= 3); none at b = 3, 4, 6, 7, 9, 10. Period 3 vs fid 126's period 2.
+  Clue: the period equals the number of leaves on that one core vertex.
+- fid 600: boundary 2b - 3 for odd b >= 5; a fixed point (a = 6) for even b >= 8.
+Not yet done for the two new families: checks past n = 62 (128-bit program) and the middle region.
