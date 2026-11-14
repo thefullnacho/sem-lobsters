@@ -258,3 +258,14 @@ Next: a proof. Lemma 5.1 gives, for each fixed b, constancy in a beyond (t + 2)(
 needed for the diagonal. Check larger t (4, 5) the same way.
 Extension: t = 4, 5, 6 (hung star with 4, 5, 6 leaves), all a >= b >= 1 with n <= 62: 2,028 more trees, 0
 violations of Conjecture 1. Total evidence: t = 1..6, 4,213 trees (P = 2, 6, 15 plus t = 4..6), every cell fits.
+
+## Two-hub landscape (2026-11-14), `analysis/landscape.py`, `notes/landscape_c8_n62_summary.txt`
+
+Every core tree with <= 8 vertices, every hub pair up to symmetry (hubs carry no core leaves), a and b leaves on
+the hubs, all a, b >= 1 with n <= 62: 231 families, 337,989 trees, deficits from Brinkmann's program.
+- ALPHA everywhere: 194. CONST deficit 1: 19. THRESH (alpha iff a <= s1 or b <= s2, else 1): 11. EVENTUAL
+  (constant once a, b >= m): 7. OTHER: 0. Max deficit anywhere: 1.
+- Every family is eventually constant in both a and b: evidence for a two-vertex Lemma 5.1.
+- Conjecture 1's families appear as THRESH (1,1) and (2,2); the other THRESH families extend it.
+- Caution: EVENTUAL with m = 18 and m = 27 rest on very few cells under n <= 62; treat as inconclusive.
+Hub-pair dedupe uses a WL hash on the marked core (colour refinement is complete for trees).
