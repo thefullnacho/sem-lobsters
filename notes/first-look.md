@@ -313,3 +313,8 @@ LIMIT of the steep scan (Alex, 2026-11-14): it held one star at 1..6 leaves and 
 out boundaries with slope up to about 19 that start at small b. It does NOT test the middle region where both stars
 have 30 to 60 leaves, beyond the old grid: a boundary that only begins at larger b, or a steeper one, could sit there.
 Next: a sparse sample of that region with the 128-bit program.
+Middle region closed (2026-11-14, `analysis/middle_scan.py`): every family, ordered pairs a, b in
+{30, 31, 40, 41, 50, 51, 58, 59} (both parities), n <= 126, 128-bit program: 14,784 trees, 0 mismatches against the
+predictions (stable value for the 229 ordinary families; exact rules for fid 126 and 206, including 206's b-odd rule
+"non-alpha iff a even and a <= 2*ceil((b - 1)/4)", which predicts a = 30, b = 59 non-alpha). Remaining untested:
+boundaries that begin beyond about 60 leaves on both stars, and cores with more than 8 vertices.
