@@ -282,3 +282,17 @@ Plan: (1) study the two outliers; (2) a specialised two-star decider with no 62-
 then the remaining labels on the leaves' side split into S_A and S_B, and the question is whether S_A - f(A),
 S_B - f(B) and the core's edge labels tile 1..n-1 (polynomial in a, b for a fixed core); validate against both
 existing deciders; (3) after the grant: a two-star lemma with a core-only threshold.
+
+## Correction: two families have boundaries that move with the other star (2026-11-14)
+
+The two outliers are not slow to settle; their switch point grows linearly with the other star:
+- fid 126 (c = 8, core [[0,5],[1,0],[1,2],[1,4],[2,3],[5,6],[5,7]], hubs 0, 4): b odd -> non-alpha iff a >= 2b + 1
+  (3, 7, 11, ..., 27 for b = 1..13); b even -> alpha throughout the grid. Its "m = 18" was an artefact of n <= 62.
+- fid 206 (c = 8, core [[0,4],[0,6],[1,0],[1,2],[1,3],[4,5],[6,7]], hubs 2, 3): parity pattern; b even: a odd alpha
+  iff a <= 2b - 3 (the P = 9 rule), a even non-alpha; odd b rows have their own linear pattern.
+Scan of all 231 families (rows b, a = 1..11, last change point vs the fixed coordinate): only these two move.
+Rows reach about 50 leaves, so boundaries steeper than about 4:1 would be invisible here.
+So the earlier "every family is eventually constant" overstated it: 229 families have small core-only thresholds
+(m <= 5); 2 (both first appearing at core size 8) have linear boundaries with parity. A theorem needs two forms:
+a core-only threshold for most cores, and regions cut by linear inequalities plus parity for the rest. The
+specialised decider (no 62-vertex limit) is needed to see whether larger cores or steeper slopes add more.
