@@ -269,3 +269,16 @@ the hubs, all a, b >= 1 with n <= 62: 231 families, 337,989 trees, deficits from
 - Conjecture 1's families appear as THRESH (1,1) and (2,2); the other THRESH families extend it.
 - Caution: EVENTUAL with m = 18 and m = 27 rest on very few cells under n <= 62; treat as inconclusive.
 Hub-pair dedupe uses a WL hash on the marked core (colour refinement is complete for trees).
+
+## Threshold risk (2026-11-14, raised by Alex/research: "moderate confidence")
+
+Risk: a two-star Lemma 5.1 with constants like (t + 2)(b + 3) passes 62 vertices once b ~ 10, leaving most of the
+231 families unsettled; the target must be a threshold depending only on the core. Measured stabilisation point m
+(deficit constant for all a, b >= m, >= 50 tail cells): 229 of 231 families have m <= 5 (most m = 1; max m by core
+size: c <= 5: 1, c = 6: 2, c = 7: 3, c = 8: 5). Outliers: one family at m = 18, one with no stable region visible
+inside n <= 62. So true thresholds look small and core-only; Lemma 5.1's bound is loose because its pigeonhole on
+A's leaves counts B's leaves too.
+Plan: (1) study the two outliers; (2) a specialised two-star decider with no 62-vertex limit: fix the core's labels,
+then the remaining labels on the leaves' side split into S_A and S_B, and the question is whether S_A - f(A),
+S_B - f(B) and the core's edge labels tile 1..n-1 (polynomial in a, b for a fixed core); validate against both
+existing deciders; (3) after the grant: a two-star lemma with a core-only threshold.
