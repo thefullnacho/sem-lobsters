@@ -226,3 +226,15 @@ explicit description and the exact boundary a >= 2. Open and outside their theor
 (max degree about n/2); our data has P = 2, 6, 15 non-alpha for all a = b <= 10; needs a two-vertex Lemma 5.1.
 Plan: research session drafts an email to Brinkmann (Alex sends): is T(a) in the k = 9 series; ask for their
 program (it would also serve as an independent second decider). Independent CP-SAT decider on hold until then.
+
+## Second decider: Brinkmann's own program (2026-11-14)
+
+Gunnar Brinkmann replied within a day and sent `multi_alphadeficit.c` (refs/brinkmann-code/, shared privately:
+ask him before publishing it or redistributing it). Built as bin/multi_alphadeficit; input is multicode
+(`analysis/to_multicode.py`). Validation against our alpha_fix: non-alpha counts identical for every n = 4..14
+(13,402 trees), and tree-by-tree identical at n = 13 and 14 (4,460 trees). It also reports the deficit.
+On our family T(a) (stars a and 4 through one vertex x, plus path x-r-c-s): alphadef(T(1)) = 0 and
+alphadef(T(a)) = 1 for every a = 2..21 (`notes/T_a_brinkmann.txt`, each well under a second). With Lemma 5.1
+(threshold 21): alphadef(T(a)) = 1 for all a >= 2. Two independent deciders agree on every case.
+Brinkmann could not confirm whether T(a) is in his k = 9 constant series (no longer works on it).
+His program is fast enough to explore the both-stars-growing direction far past our search's reach.
