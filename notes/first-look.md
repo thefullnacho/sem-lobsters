@@ -339,3 +339,13 @@ Period test, fid 126's core with t leaves on vertex 5 (`analysis/period_test.py`
 boundary exists it is at a = 2b + 1; which b have one is periodic in b with period t for b >= 5: t=1 none; t=2
 b = 1 (mod 2); t=3 b = 2 (mod 3); t=4 none; t=5 b = 1, 2, 4 (mod 5); t=6 b = 1, 2, 3, 5 (mod 6). Candidate "t does not
 divide b(b + 2)" fits t = 1, 2, 3, 5, 6 for larger b but not t = 4 or some small b: unconfirmed. Wider test running.
+
+## Period test, t = 1..10, b up to ~30-35 (2026-11-14, `analysis/period_test3.py`, `notes/period_test3_partial.txt`)
+
+1,018 of 1,128 trees (the largest, near n = 127, still running). Boundary at a = 2b + 1 or none; no other patterns.
+"t does not divide b(b + 2)" is WRONG (fails t = 4, 7, 8, 9, 10). Rule that fits every completed case:
+- t != 1 (mod 3) (t = 2, 3, 5, 6, 8, 9): boundary iff t does not divide b and t does not divide b + 2; exception: the
+  first b with b + 2 = t (b = 1, 3, 4, 6, 7 for t = 3, 5, 6, 8, 9) still has the boundary. Off-residues {0, t - 2}.
+- t = 1 (mod 3) (t = 1, 4, 7, 10): no boundary once b is past a few small values (t = 4: only b = 1; t = 7: b <= 3;
+  t = 10: b <= 5; t = 1: none).
+Conjecture shaped by this data; needs fresh predictions (larger t, larger b) before trusting it.
