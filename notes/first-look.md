@@ -296,3 +296,11 @@ So the earlier "every family is eventually constant" overstated it: 229 families
 (m <= 5); 2 (both first appearing at core size 8) have linear boundaries with parity. A theorem needs two forms:
 a core-only threshold for most cores, and regions cut by linear inequalities plus parity for the rest. The
 specialised decider (no 62-vertex limit) is needed to see whether larger cores or steeper slopes add more.
+
+## Past 62 vertices: 128-bit patch of Brinkmann's program (2026-11-14)
+
+`analysis/multi_alphadeficit128.c` (local patch, NOT for redistribution: ULLI -> unsigned __int128, VERTICES 127,
+two hardcoded widths). Validation: identical output to the original (deficit-0 and deficit-1 filters, counts) on
+every tree n = 4..16, and on all 2,862 grid cells of the two outlier families. About 1 s at n ~ 67, ~18 s at n ~ 100-118.
+Outlier rules confirmed beyond the old limit: fid 126, b = 29: alpha at a = 56..58, deficit 1 at a = 59 (= 2b + 1);
+b = 30: alpha at a = 40, 61, 80 (n = 110). fid 206, b = 30: odd a alpha up to 57 (= 2b - 3), 59 non-alpha; even a non-alpha.
