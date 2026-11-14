@@ -256,3 +256,5 @@ Conjecture 1 (data to n = 62, two deciders where they overlap; proved for t = 1,
 This is the both-stars-growing direction outside Brinkmann et al.'s Theorem 1.2 (max degree about n/2).
 Next: a proof. Lemma 5.1 gives, for each fixed b, constancy in a beyond (t + 2)(b + 3); a two-vertex version is
 needed for the diagonal. Check larger t (4, 5) the same way.
+Extension: t = 4, 5, 6 (hung star with 4, 5, 6 leaves), all a >= b >= 1 with n <= 62: 2,028 more trees, 0
+violations of Conjecture 1. Total evidence: t = 1..6, 4,213 trees (P = 2, 6, 15 plus t = 4..6), every cell fits.
