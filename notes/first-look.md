@@ -304,3 +304,8 @@ two hardcoded widths). Validation: identical output to the original (deficit-0 a
 every tree n = 4..16, and on all 2,862 grid cells of the two outlier families. About 1 s at n ~ 67, ~18 s at n ~ 100-118.
 Outlier rules confirmed beyond the old limit: fid 126, b = 29: alpha at a = 56..58, deficit 1 at a = 59 (= 2b + 1);
 b = 30: alpha at a = 40, 61, 80 (n = 110). fid 206, b = 30: odd a alpha up to 57 (= 2b - 3), 59 non-alpha; even a non-alpha.
+Steep-boundary scan (`analysis/steep_scan.py`, 128-bit program): every family, one hub fixed at 1..6 leaves, the
+other at 70, 85, 100, 115 leaves (n <= 126), both orientations: 9,958 trees, 0 differ from the stable value at the
+edge of the n <= 62 grid. (A first run had a bug: the second orientation repeated the first; fixed and rerun.)
+With one star small the program is near-instant even at n ~ 125. So no hidden boundary with slope up to ~18:1;
+the two linear-boundary families (126, 206) look like the only ones among cores up to 8 vertices.
