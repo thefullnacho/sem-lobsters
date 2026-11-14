@@ -309,3 +309,7 @@ other at 70, 85, 100, 115 leaves (n <= 126), both orientations: 9,958 trees, 0 d
 edge of the n <= 62 grid. (A first run had a bug: the second orientation repeated the first; fixed and rerun.)
 With one star small the program is near-instant even at n ~ 125. So no hidden boundary with slope up to ~18:1;
 the two linear-boundary families (126, 206) look like the only ones among cores up to 8 vertices.
+LIMIT of the steep scan (Alex, 2026-11-14): it held one star at 1..6 leaves and pushed the other to 115, so it rules
+out boundaries with slope up to about 19 that start at small b. It does NOT test the middle region where both stars
+have 30 to 60 leaves, beyond the old grid: a boundary that only begins at larger b, or a steeper one, could sit there.
+Next: a sparse sample of that region with the 128-bit program.
