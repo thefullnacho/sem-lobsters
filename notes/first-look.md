@@ -238,3 +238,21 @@ alphadef(T(a)) = 1 for every a = 2..21 (`notes/T_a_brinkmann.txt`, each well und
 (threshold 21): alphadef(T(a)) = 1 for all a >= 2. Two independent deciders agree on every case.
 Brinkmann could not confirm whether T(a) is in his k = 9 constant series (no longer works on it).
 His program is fast enough to explore the both-stars-growing direction far past our search's reach.
+
+## Both stars growing: full grid with Brinkmann's program (2026-11-14)
+
+All a >= b >= 1 with n <= 62 (the program's limit), one-vertex connector, pendants P = 2, 6, 15, 8, 9
+(`analysis/diag.py`, `notes/grid/`): 3,727 trees, each well under a second, none undecided. Every tree with
+n <= 22 (267) re-decided by our alpha_fix: 0 disagreements. Deficit is never above 1.
+
+Pattern, "a star with t leaves hung on x through one vertex" (x - r - c, t leaves on c; P = 2, 6, 15 are t = 1, 2, 3):
+  alpha-deficit = 0 if min(a, b) <= t, and exactly 1 otherwise. Holds in every cell, all a, b up to n = 62.
+P = 8: alpha iff b <= 2. P = 9: alpha iff b = 1 or 3, or b odd >= 5 (any a >= b), or b even and a odd with
+  b < a <= 2b - 3; deficit 1 otherwise.
+
+Conjecture 1 (data to n = 62, two deciders where they overlap; proved for t = 1, b = 4 via Lemma 5.1):
+  For t >= 1, the tree of two stars (a and b leaves) through one vertex x, with a t-leaf star hung on x through
+  one extra vertex, has alpha-deficit 0 if min(a, b) <= t and alpha-deficit 1 otherwise.
+This is the both-stars-growing direction outside Brinkmann et al.'s Theorem 1.2 (max degree about n/2).
+Next: a proof. Lemma 5.1 gives, for each fixed b, constancy in a beyond (t + 2)(b + 3); a two-vertex version is
+needed for the diagonal. Check larger t (4, 5) the same way.
