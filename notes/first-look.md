@@ -381,3 +381,8 @@ Next: understand the mod-3 split (lead: comets' alpha-deficit floor(m/3), Brinkm
   p0 = (|V1| - 1)(|V2| + 1). Computing every a = 1..p0 proves the verdict for all a. Within 127 vertices this is
   possible for 128 of 520 (t, b) cases (t = 1: b <= 27; 2: <= 20; 3: <= 16; 4: <= 13; 5: <= 11; 6: <= 9; 7: <= 7;
   8: <= 6; 9: <= 5; 10, 11: <= 4; 12, 13: <= 3). The other 392 stay observed, flagged as such.
+Lemma 5.1 proof runs (2026-11-15, `analysis/prove_a_range.py`, `notes/prove_a_range.txt`): every a = 1..p0 for all
+128 reachable (t, b) cases, 8,405 trees. All 128 match the rule at every a: 61 with a boundary (alpha for a <= 2b,
+deficit 1 for a >= 2b + 1, hence for all a by Lemma 5.1), 67 without (alpha for every a). These 128 verdicts hold for
+ALL a (computer-assisted: Lemma 5.1 + the validated 128-bit program). The other 392 (t, b) cases (larger b for each t)
+remain observed at a = 2b, 2b + 1, 2b + 4 only. One tree of the period_test3 run (t = 1..10) is still running.
