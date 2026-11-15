@@ -349,3 +349,9 @@ divide b(b + 2)" fits t = 1, 2, 3, 5, 6 for larger b but not t = 4 or some small
 - t = 1 (mod 3) (t = 1, 4, 7, 10): no boundary once b is past a few small values (t = 4: only b = 1; t = 7: b <= 3;
   t = 10: b <= 5; t = 1: none).
 Conjecture shaped by this data; needs fresh predictions (larger t, larger b) before trusting it.
+Review (research session, 2026-11-14): the new rule and "t does not divide b(b+2)" differ only when t has a repeated
+factor of 2 to split: t = 8 at b = 2, 10, 18, 26 (data: boundary at all four, so the new rule wins) and t = 12 at
+b = 4, 6 (mod 12). "30 trees past 62 vertices" in my message was a miscount: the run had 27 cases, all reported.
+The 110 large trees still running are a held-out test, scored against the rule as committed in cc6dec9, no refit.
+Pre-registered predictions for t = 11, 12, 13: `notes/period_predictions_t11_13.md`.
+Reading lead (not checked): Brinkmann et al. give comets alpha-deficit floor(m/3); a period of 3 has appeared here before.
