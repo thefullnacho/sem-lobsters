@@ -413,3 +413,7 @@ Independent checks, results (2026-11-15):
   vertices + verified alpha-labellings above); 29 depend on the patch for uncertified alpha verdicts above 63;
   47 depend on the patch for non-alpha verdicts above 63. For the write-up, the proof tier is the 52 until the
   patch is released (Brinkmann's permission) or an independent certificate exists for the rest.
+Known-answer tests of the 128-bit copy, final (`notes/known_answer.txt`): T(a), a = 54..117 (n = 64..127, deficit 1
+known without the patch): 64 of 64 correct. Random caterpillars n = 64..127 (deficit 0): 163 of 163 that finished
+correct; 37 hit the 5-minute per-tree cap (TIMEOUT, no answer). No wrong answer anywhere.
+Period test t = 1..10 (`period_test3`) complete: 1,128 of 1,128 trees.
