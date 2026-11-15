@@ -386,3 +386,19 @@ Lemma 5.1 proof runs (2026-11-15, `analysis/prove_a_range.py`, `notes/prove_a_ra
 deficit 1 for a >= 2b + 1, hence for all a by Lemma 5.1), 67 without (alpha for every a). These 128 verdicts hold for
 ALL a (computer-assisted: Lemma 5.1 + the validated 128-bit program). The other 392 (t, b) cases (larger b for each t)
 remain observed at a = 2b, 2b + 1, 2b + 4 only. One tree of the period_test3 run (t = 1..10) is still running.
+
+## Review of the proven tier (research session, 2026-11-15)
+
+- V1 check: threshold() takes V1 = colour class of vertex 0 = A's centre (the hub with a leaves) = the class of v. OK.
+- Above 63 vertices the widened copy had been checked only against itself: 95 of the 128 "proven" (t, b) cases
+  include trees with n > 63 (3,226 of 8,405 trees; 1,636 alpha, 1,590 non-alpha). Our alpha_fix never ran above 48.
+  Independent checks now:
+  1. All 5,082 proof-run trees with n <= 62 rerun on Brinkmann's ORIGINAL program: 0 disagreements. So the 33 cases
+     entirely <= 62 vertices do not depend on the patch.
+  2. alpha verdicts above 63: certified independently by finding an alpha-labelling with alpha_fix128 (MAXN 128,
+     arrays only) and verifying it in Python (barrientos.alpha_check). Running (`analysis/witness_big.py`).
+  3. non-alpha verdicts above 63: no independent certificate possible with our decider; only known-answer tests of
+     the widened copy (T(a), deficit 1 for all a >= 2 by original program + Lemma 5.1, at n = 64..127; random
+     caterpillars n = 64..127, deficit 0). Running.
+- Publishing: the proof tier needs releasable code. Queued for Alex: ask Brinkmann whether his program and our
+  128-bit patch may be released. Until then, the tier claims for n > 63 rest on the patch.
