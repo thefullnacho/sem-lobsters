@@ -355,3 +355,16 @@ b = 4, 6 (mod 12). "30 trees past 62 vertices" in my message was a miscount: the
 The 110 large trees still running are a held-out test, scored against the rule as committed in cc6dec9, no refit.
 Pre-registered predictions for t = 11, 12, 13: `notes/period_predictions_t11_13.md`.
 Reading lead (not checked): Brinkmann et al. give comets alpha-deficit floor(m/3); a period of 3 has appeared here before.
+
+## Period rule: held-out and pre-registered tests PASS (2026-11-15)
+
+- Pre-registered t = 11, 12, 13 (`notes/period_predictions_t11_13.md`, committed d8d178d before running;
+  results `notes/period_t11_13.txt`): 30 of 30 as predicted. t = 12 at b = 4, 16, 28, 6, 18, 30 (where the old guess
+  "t does not divide b(b+2)" says no boundary): boundary at all six. t = 11: exception b = 9 has it; 11, 20, 22, 31 do
+  not. t = 13: boundary for b = 1..7, none at 8, 9, 15, 25 (cutoff (2t - 5)/3 = 7 exactly).
+- Held-out (results that landed after cc6dec9, scored against the rule as committed, no refit): 35 of 35 complete
+  cases agree. The other cases near b = 37-40 exceed the 127-vertex limit and were never run.
+Rule (family: fid 126's core with t leaves on vertex 5; boundary means non-alpha iff a >= 2b + 1):
+  t != 1 (mod 3): boundary iff t divides neither b nor b + 2, plus the first b with b + 2 = t.
+  t = 1 (mod 3): boundary only for b <= (2t - 5)/3.
+Next: understand the mod-3 split (lead: comets' alpha-deficit floor(m/3), Brinkmann et al. 2012).
