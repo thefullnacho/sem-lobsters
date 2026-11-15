@@ -368,3 +368,16 @@ Rule (family: fid 126's core with t leaves on vertex 5; boundary means non-alpha
   t != 1 (mod 3): boundary iff t divides neither b nor b + 2, plus the first b with b + 2 = t.
   t = 1 (mod 3): boundary only for b <= (2t - 5)/3.
 Next: understand the mod-3 split (lead: comets' alpha-deficit floor(m/3), Brinkmann et al. 2012).
+
+## Review of the period rule (research session, 2026-11-15): what is proven vs observed
+
+- Provenance of the "b + 2 = t" exception: read off the t <= 10 data (t = 3, 5, 6, 8, 9) and written into cc6dec9
+  after seeing it; pre-registered only for t = 11 (b = 9) and t = 12 (b = 10). Those two are its only fresh tests.
+- Scope: verdicts were checked only up to the largest b whose trees fit in 127 vertices (about b = 36-40 depending
+  on t); larger b is untested.
+- a-range: every verdict looked only at a = 2b, 2b + 1, 2b + 4. "Never again" / "none" claims for all larger a are
+  observations, not proofs.
+- Closing it with Lemma 5.1: for each (t, b), T = the tree with A's leaves removed (v = A = hub 0); threshold
+  p0 = (|V1| - 1)(|V2| + 1). Computing every a = 1..p0 proves the verdict for all a. Within 127 vertices this is
+  possible for 128 of 520 (t, b) cases (t = 1: b <= 27; 2: <= 20; 3: <= 16; 4: <= 13; 5: <= 11; 6: <= 9; 7: <= 7;
+  8: <= 6; 9: <= 5; 10, 11: <= 4; 12, 13: <= 3). The other 392 stay observed, flagged as such.
