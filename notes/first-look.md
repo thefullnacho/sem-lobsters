@@ -402,3 +402,14 @@ remain observed at a = 2b, 2b + 1, 2b + 4 only. One tree of the period_test3 run
      caterpillars n = 64..127, deficit 0). Running.
 - Publishing: the proof tier needs releasable code. Queued for Alex: ask Brinkmann whether his program and our
   128-bit patch may be released. Until then, the tier claims for n > 63 rest on the patch.
+Independent checks, results (2026-11-15):
+- alpha witnesses above 63: the general search (alpha_fix128) found none at n = 64 (24 tries; stopped). The
+  block-structured split search (gblocks, block thresholds 4, 3, 2, 5) certified 651 of 1,636 alpha trees, each
+  converted to an alpha-labelling and verified by barrientos.alpha_check (`notes/witness_block.txt`). It works near
+  the boundary (b < a <= 2b: 117 of 124) but mostly fails in the far tail (a > 2b: 534 of 1,508): tail labellings
+  are not block-structured.
+- Known-answer tests of the 128-bit copy (`/data/sem-lobsters/known_answer.txt`): running; first 70 all correct.
+- Proven tier, by what it rests on: 52 of 128 (t, b) cases independent of the patch (original program <= 62
+  vertices + verified alpha-labellings above); 29 depend on the patch for uncertified alpha verdicts above 63;
+  47 depend on the patch for non-alpha verdicts above 63. For the write-up, the proof tier is the 52 until the
+  patch is released (Brinkmann's permission) or an independent certificate exists for the rest.
