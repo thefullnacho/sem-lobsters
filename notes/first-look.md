@@ -417,3 +417,11 @@ Known-answer tests of the 128-bit copy, final (`notes/known_answer.txt`): T(a), 
 known without the patch): 64 of 64 correct. Random caterpillars n = 64..127 (deficit 0): 163 of 163 that finished
 correct; 37 hit the 5-minute per-tree cap (TIMEOUT, no answer). No wrong answer anywhere.
 Period test t = 1..10 (`period_test3`) complete: 1,128 of 1,128 trees.
+
+## Release permission (Brinkmann, email 2026-11-16; recorded here 2026-11-23)
+
+Brinkmann: "Feel free to release it with the change". Conditions: comment the change in the code, and keep an option
+to compile plain 64-bit (faster). Alex promised: every change commented, 64-bit default, 128-bit as a compile option
+for trees over 63 vertices, and a link to him once it is out. So the "patch not releasable" caveat above goes away once
+that build is done; the proof tier is then all 128 (t, b) cases (computer-assisted), 69 of them also checked
+independently of the patch. The "Not for redistribution" header in multi_alphadeficit128.c is now out of date.
