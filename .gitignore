@@ -1,1 +1,6 @@
 data/*.txt
+refs/
+bin/
+analysis/alpha_fix
+analysis/alpha_fix128
+__pycache__/

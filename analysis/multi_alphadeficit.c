@@ -1,4 +1,11 @@
-/* LOCAL PATCH of Brinkmann's multi_alphadeficit.c: 128-bit sets, up to 127 vertices. Not for redistribution. */
+/*
+CHANGES BY ALEX (sem-lobsters, 2026), released with the author's permission (G. Brinkmann, 2026-11-16).
+The only change is an optional 128-bit build so that trees with up to 127 vertices can be handled.
+Default build (no flags): identical to the original program, 64-bit sets, at most 63 vertices.
+128-bit build: compile with -DALPHA128 (gcc/clang, which provide unsigned __int128). Slower than the
+64-bit build, so use it only for trees with more than 63 vertices.
+Every changed line is marked "ALPHA128 change". Nothing else in the program was touched.
+*/
 
 /*
 ONLY for trees. It is tested in the beginning whether the graph read is a tree!
@@ -42,14 +49,24 @@ of inserting errors is bigger than the possible advantage...
 #include<limits.h>
 
 #define leer 255 
-#define VERTICES 127 // local patch: 128 bit sets (unsigned __int128), vertex numbers start at 1 
+#ifdef ALPHA128 // ALPHA128 change: 128 bit sets allow up to 127 vertices
+#define VERTICES 127
+#define SETBITS 128
+#else
+#define VERTICES 63 // do not change to higher than 63: 64 bit ints are used as sets 
                     // and the vertex numbers start at 1
+#define SETBITS 64 // ALPHA128 change: number of bits in a set (was a literal 64 in writeset)
+#endif
 #define MARK_LIMIT (USHRT_MAX-2)
 #define ENDLIST INT_MAX // to mark the end of a list of vertices
 
 typedef int GRAPH[VERTICES+1][VERTICES+1];
 typedef int ADJAZENZ[VERTICES+1];
-typedef unsigned __int128 ULLI; // local patch, was unsigned long long
+#ifdef ALPHA128 // ALPHA128 change: the set type is 128 bits wide
+typedef unsigned __int128 ULLI;
+#else
+typedef unsigned long long int ULLI;
+#endif
 
 #define BIT(i) ((((ULLI) 1)<<(i)))
 #define NBIT(i) (~(BIT(i)))
@@ -105,7 +122,8 @@ void writeset(ULLI set)
   int i;
 
   fprintf(stderr,"-------------------------------------\nThe set: \n");
-  for (i=0;i<128;i++) if (set & BIT(i)) fprintf(stderr,"%d ",i);
+  for (i=0;i<SETBITS;i++) if (set & BIT(i)) // ALPHA128 change: was i<64
+      fprintf(stderr,"%d ",i);
   fprintf(stderr,"\n-------------------------------------\n");
 
 }
@@ -1262,8 +1280,8 @@ char *filename=NULL;
 
  srand(0);
 
- if (sizeof(ULLI)!=16) 
-   { fprintf(stderr,"Sorry -- expected 64 bit unsigned long long int -- exiting\n");
+ if (sizeof(ULLI)!=SETBITS/8) // ALPHA128 change: was sizeof(ULLI)!=8
+   { fprintf(stderr,"Sorry -- expected %d bit set type -- exiting\n",SETBITS);
      exit(1); }
 
  for (i=1; i<argc; i++)

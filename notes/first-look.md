@@ -230,13 +230,13 @@ program (it would also serve as an independent second decider). Independent CP-S
 ## Second decider: Brinkmann's own program (2026-11-14)
 
 Gunnar Brinkmann replied within a day and sent `multi_alphadeficit.c` (refs/brinkmann-code/, shared privately:
-ask him before publishing it or redistributing it). Built as bin/multi_alphadeficit; input is multicode
+he has since agreed to its release, see the end of this file). Built as bin/multi_alphadeficit; input is multicode
 (`analysis/to_multicode.py`). Validation against our alpha_fix: non-alpha counts identical for every n = 4..14
 (13,402 trees), and tree-by-tree identical at n = 13 and 14 (4,460 trees). It also reports the deficit.
 On our family T(a) (stars a and 4 through one vertex x, plus path x-r-c-s): alphadef(T(1)) = 0 and
 alphadef(T(a)) = 1 for every a = 2..21 (`notes/T_a_brinkmann.txt`, each well under a second). With Lemma 5.1
 (threshold 21): alphadef(T(a)) = 1 for all a >= 2. Two independent deciders agree on every case.
-Brinkmann could not confirm whether T(a) is in his k = 9 constant series (no longer works on it).
+Brinkmann could not confirm whether T(a) is in his k = 9 constant series.
 His program is fast enough to explore the both-stars-growing direction far past our search's reach.
 
 ## Both stars growing: full grid with Brinkmann's program (2026-11-14)
@@ -420,8 +420,9 @@ Period test t = 1..10 (`period_test3`) complete: 1,128 of 1,128 trees.
 
 ## Release permission (Brinkmann, email 2026-11-16; recorded here 2026-11-23)
 
-Brinkmann: "Feel free to release it with the change". Conditions: comment the change in the code, and keep an option
-to compile plain 64-bit (faster). Alex promised: every change commented, 64-bit default, 128-bit as a compile option
-for trees over 63 vertices, and a link to him once it is out. So the "patch not releasable" caveat above goes away once
-that build is done; the proof tier is then all 128 (t, b) cases (computer-assisted), 69 of them also checked
-independently of the patch. The "Not for redistribution" header in multi_alphadeficit128.c is now out of date.
+Brinkmann agreed to the release of his program with our change, on two conditions: the change is commented in the
+code, and a plain 64-bit build stays available (it is faster). Done 2026-11-23: `analysis/multi_alphadeficit.c` is his
+program with an optional 128-bit build (`-DALPHA128`, up to 127 vertices); 64-bit is the default; every changed line
+is marked "ALPHA128 change". `make` builds both bin/multi_alphadeficit and bin/multi_alphadeficit128. This replaces the
+earlier local copy analysis/multi_alphadeficit128.c. So the "patch not releasable" caveat above no longer applies: the
+proof tier is all 128 (t, b) cases (computer-assisted), 69 of them also checked independently of the 128-bit build.
