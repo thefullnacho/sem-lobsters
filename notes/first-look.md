@@ -436,3 +436,18 @@ lie entirely within 63 vertices. The tree is symmetric in A and B, so Conjecture
 min(a, b) <= 28, 21, 17, 14, 12, 10 for t = 1..6. Open: both stars above those bounds. Whole run took about 20 s.
 Period rule rescored from all result files: 9,259 trees, 419 (t, b) pairs, 0 mismatches; 128 pairs proven for all a,
 the other 291 tested at a = 2b, 2b + 1, 2b + 4 only.
+
+## Correction: a fifth moving family, fid 574 (2026-11-23)
+
+Rescoring the c <= 9 landscape (constant for all a, b >= m, >= 50 tail cells): m = 1 for 589 families, 2..8 for 41,
+and five families with no small m: 126, 440 (both "m = 18" artefacts of their linear boundaries), 206, 600, and 574.
+fid 574 (core [[0,5],[0,8],[1,0],[1,2],[1,3],[1,4],[5,6],[5,7]], hubs 2, 3) was missed by the earlier scan: for
+b = 0, 1 (mod 3) from b = 6 the deficit has period 3 in a below a cutoff growing roughly linearly in b, then 1;
+for b = 2 (mod 3) it is 0 except a = 3 and a short run of small a that lengthens with b. So "4 of 635 families
+move" was wrong: 5. No exact rule yet; not checked past 62 vertices.
+
+## Commit hashes changed (2026-11-23)
+
+The history was rewritten before publishing (PDFs, Brinkmann's unmodified file and binaries removed), so hashes
+quoted above are the pre-rewrite ones. Mapping (dates unchanged): cc6dec9 -> eedee92 (period rule as frozen),
+d8d178d -> 4306a25 (pre-registered predictions), 626d01a -> bc77685 (results).
