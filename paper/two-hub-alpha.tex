@@ -14,8 +14,7 @@
 \newcommand{\ad}{\operatorname{ad}}
 
 \title[Alpha-deficits of two-hub trees]{Alpha-deficits of trees with two large stars:\\ computations, a period rule, and conjectures}
-% TODO(Alex): full name, affiliation, contact address.
-\author{Alex [Surname]}
+\author{Alexandre de Brantes}
 \date{Draft, 23 November 2026}
 
 \begin{document}
@@ -37,8 +36,6 @@ conjectures. All code and data are public.
 \end{abstract}
 
 \maketitle
-
-% TODO(Alex): decide on and add an AI-assistance statement if the venue asks for one.
 
 \section{Introduction}
 
@@ -340,6 +337,14 @@ alpha verdicts for which no explicit labelling has been found. Of the 102 pairs 
 \section*{Data and code}
 All scripts, raw outputs and the research log are at
 \url{https://github.com/thefullnacho/sem-lobsters}, including the 128-bit build of Brinkmann's program.
+
+\section*{AI assistance}
+This work was carried out with extensive help from AI assistants (Claude, by Anthropic) and would not have been
+possible without them. They wrote and ran most of the search and analysis code, proposed rules and conjectures and
+tested them against the data, found the literature cited here, and drafted this paper. The author directed the
+research and decided what to test and what to claim. Every computational claim rests on the programs and checks
+described in Section~\ref{sec:reliability}, and all code and raw output are public, so each can be checked
+independently; the proof of Proposition~\ref{prop:formula} is short enough to check by hand.
 
 \section*{Acknowledgements}
 We thank Gunnar Brinkmann for sending his program \texttt{multi\_alphadeficit} and permitting its release with our

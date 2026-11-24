@@ -30,3 +30,8 @@ Main results so far (details, provenance and caveats in `notes/first-look.md`):
     gcc -O3 -o analysis/alpha_fix analysis/alpha_fix.c
 
 Input is multicode (`analysis/to_multicode.py`). Scripts expect to be run from `analysis/`.
+
+## License
+
+MIT (see `LICENSE`), except `analysis/multi_alphadeficit.c`, which is Gunnar Brinkmann's program, distributed
+here with his permission and not under the MIT license.
