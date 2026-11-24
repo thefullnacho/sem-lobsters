@@ -44,7 +44,9 @@ $f\colon V(T)\to\{0,\dots,q\}$ whose edge labels $|f(u)-f(v)|$ are exactly $\{1,
 \emph{alpha-labelling} (Rosa~\cite{rosa}) if in addition there is a $\lambda$ such that every edge has one end
 labelled at most $\lambda$ and the other end labelled more than $\lambda$; then the vertices labelled at most
 $\lambda$ form one colour class. Every caterpillar has an alpha-labelling~\cite{rosa}, while no tree of diameter~4
-that is not a caterpillar has one~\cite{hkr}. Between these two facts little is known in general; see Gallian's
+that is not a caterpillar has one~\cite{hkr}.
+% TODO: attribution unconfirmed; we also checked it for n <= 12.
+ Between these two facts little is known in general; see Gallian's
 survey~\cite{gallian}.
 
 Brinkmann, Crevals, Melot, Rylands and Steffen~\cite{bcmrs} introduced the \emph{alpha-deficit} $\ad(T)$, which
@@ -61,15 +63,14 @@ alone gives constancy in $a$ only for each fixed $b$, with a threshold that grow
 
 The work started from super edge-magic labellings: an exhaustive search for super edge-magic labellings of trees
 with up to 25 vertices left, as its hardest cases, leafy lobsters made of two large stars joined through a short
-connector with one small pendant tree. Alpha-labellings give super edge-magic labellings of trees (one
-reverses the labels of one colour class; see~\cite{fim})% TODO: confirm this is the right reference.
-, so we asked which of these trees have
+connector with one small pendant tree. Alpha-labellings of trees give super edge-magic labellings: a tree has an
+alpha-labelling if and only if it has a special super edge-magic labelling (see~\cite{muntaner}), so we asked which of these trees have
 alpha-labellings, and found that many do not.
 
 \subsection*{Results}
 \begin{itemize}
-\item An explicit alpha-labelling of the lobster consisting of two stars joined by a path of length~3 with an
-  edge hung on an inner vertex (Proposition~\ref{prop:formula}).
+\item An explicit alpha-labelling of the lobster consisting of two stars joined by a path of length~3 with a
+  path of length~2 hung on an inner vertex (Proposition~\ref{prop:formula}).
 \item Theorem~\ref{thm:conj1}: the exact alpha-deficit of the family $S_t(a,b)$ (Figure~\ref{fig:families}) for
   $t\le 6$ and $\min(a,b)$ up to an explicit bound, proving Conjecture~\ref{conj:1} there. The case $t=1$, $b=4$
   gives a single explicit infinite sequence of trees of diameter~5 with alpha-deficit exactly~1.
@@ -351,18 +352,19 @@ We thank Gunnar Brinkmann for sending his program \texttt{multi\_alphadeficit} a
 change.
 
 \begin{thebibliography}{9}
-% TODO: check every entry against the published version before submission.
+% Checked 2026-11-23: barrientos, bcmrs, gallian, muntaner (via citing papers).
+% TODO: hkr and rosa not yet checked against the originals.
 \bibitem{barrientos} C.~Barrientos, Alpha-trees over paths and caterpillars, \emph{Utilitas Math.} \textbf{123}
   (2025) 195--204, doi:10.61091/um123-15.
 \bibitem{bcmrs} G.~Brinkmann, S.~Crevals, H.~M\'elot, L.~Rylands, E.~Steffen, $\alpha$-labelings and the structure
   of trees with nonzero $\alpha$-deficit, \emph{Discrete Math.\ Theor.\ Comput.\ Sci.} \textbf{14}(1) (2012)
   159--174, doi:10.46298/dmtcs.569.
-\bibitem{fim} R.~M.~Figueroa-Centeno, R.~Ichishima, F.~A.~Muntaner-Batle, The place of super edge-magic labelings
-  among other classes of labelings, \emph{Discrete Math.} \textbf{231} (2001) 153--168.
 \bibitem{gallian} J.~A.~Gallian, A dynamic survey of graph labeling, \emph{Electron.\ J.\ Combin.}, Dynamic Survey
-  DS6.
+  DS6 (version of 6 November 2026), doi:10.37236/27.
 \bibitem{hkr} C.~Huang, A.~Kotzig, A.~Rosa, Further results on tree labellings, \emph{Utilitas Math.} \textbf{21}
   (1982) 31--48.
+\bibitem{muntaner} F.~A.~Muntaner-Batle, Special super edge-magic labelings of bipartite graphs, \emph{J.\
+  Combin.\ Math.\ Combin.\ Comput.} \textbf{39} (2001) 107--120.
 \bibitem{rosa} A.~Rosa, On certain valuations of the vertices of a graph, in: \emph{Theory of Graphs (Internat.\
   Sympos., Rome, 1966)}, Gordon and Breach, New York, 1967, 349--355.
 \end{thebibliography}
