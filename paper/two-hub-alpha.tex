@@ -274,20 +274,60 @@ The exception $b=t-2$ was read off the data for $t=3,5,6,8,9$; its only fresh te
 to 127 vertices); for the 291 pairs outside Theorem~\ref{thm:period} only $a=2b,2b+1,2b+4$ were computed.
 
 \subsection*{The other three exceptional families}
-In each, the hubs are both leaves of the core at a vertex $x$, and a small tree hangs from $x$ through a vertex $p$.
+In each (Figure~\ref{fig:other}), the hubs are both leaves of the core at a vertex $x$, and a small tree hangs from
+$x$ through a vertex $p$.
 Their rules below are observations, not theorems: they hold for all $a,b$ with $n\le 62$, and the first two
 also on samples with up to 126 vertices.
 \begin{itemize}
-\item $p$ carries two paths of length~2 (core of 8 vertices). For $a\ge b$: alpha iff $b$ is odd, or $b$ is even,
+\item[(a)] $p$ carries two paths of length~2 (core of 8 vertices). For $a\ge b$: alpha iff $b$ is odd, or $b$ is even,
   $a$ is odd and $b<a\le 2b-3$.
-\item $p$ carries two leaves and a vertex with two leaves. For $b\ge 5$: if $b$ is odd, deficit 1 iff ($a$ odd and
+\item[(b)] $p$ carries two leaves and a vertex with two leaves. For $b\ge 5$: if $b$ is odd, deficit 1 iff ($a$ odd and
   $a\ge5$) or $a\ge 2b-2$; if $b$ is even, deficit 1 iff $a$ is odd and $5\le a\le 2\lfloor b/4\rfloor+1$.
-\item $x$ also carries a leaf, and $p$ carries a leaf and a vertex with two leaves. For $b\equiv 0,1\pmod 3$
+\item[(c)] $x$ also carries a leaf, and $p$ carries a leaf and a vertex with two leaves. For $b\equiv 0,1\pmod 3$
   (from $b=6$) the deficit has period~3 in $a$ up to a cutoff that grows roughly linearly in $b$, and is 1 beyond
   it; for $b\equiv 2\pmod 3$ it is 0 except at $a=3$ and a short run of small $a$ that lengthens with $b$. We
   have not found an exact rule, and this family has not been checked beyond 62 vertices.
 \end{itemize}
-% TODO: draw these three cores in a figure.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.68, every node/.style={circle,fill,inner sep=1.3pt}, lab/.style={draw=none,fill=none,rectangle,inner sep=1pt}]
+\newcommand{\spine}{%
+  \node (A) at (0,0) {}; \node (x) at (1.6,0) {}; \node (B) at (3.2,0) {}; \node (p) at (1.6,1.1) {};
+  \draw (A)--(x)--(B); \draw (x)--(p);
+  \foreach \ang in {150,180,210} \draw (A)--++(\ang:0.7) node {};
+  \foreach \ang in {-30,0,30} \draw (B)--++(\ang:0.7) node {};
+  \node[lab] at (-1.05,0) {$a$}; \node[lab] at (4.25,0) {$b$};
+  \node[lab] at (1.3,-0.3) {$x$}; \node[lab] at (1.25,0.9) {$p$};}
+% (a) two paths of length 2 from p
+\begin{scope}
+\spine
+\draw (p)--++(120:0.8) node (q1) {} --++(120:0.8) node {};
+\draw (p)--++(60:0.8) node (q2) {} --++(60:0.8) node {};
+\node[lab] at (1.6,-1.0) {(a)};
+\end{scope}
+% (b) two leaves and a vertex with two leaves on p
+\begin{scope}[xshift=6.4cm]
+\spine
+\draw (p)--++(135:0.75) node {}; \draw (p)--++(45:0.75) node {};
+\draw (p)--++(90:0.95) node (w) {};
+\draw (w)--++(120:0.75) node {}; \draw (w)--++(60:0.75) node {};
+\node[lab] at (1.6,-1.0) {(b)};
+\end{scope}
+% (c) leaf on x; p carries a leaf and a vertex with two leaves
+\begin{scope}[xshift=12.8cm]
+\spine
+\draw (x)--++(-60:0.6) node {};
+\draw (p)--++(30:0.75) node {};
+\draw (p)--++(110:0.85) node (w) {};
+\draw (w)--++(140:0.75) node {}; \draw (w)--++(80:0.75) node {};
+\node[lab] at (1.6,-1.0) {(c)};
+\end{scope}
+\end{tikzpicture}
+\caption{The other three families whose boundary between deficit 0 and 1 moves with the other star. Hubs carry $a$
+and $b$ leaves; everything else is the core (8, 9 and 9 vertices).}
+\label{fig:other}
+\end{figure}
 
 \section{Reliability of the computations}\label{sec:reliability}
 
