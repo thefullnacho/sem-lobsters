@@ -426,3 +426,13 @@ program with an optional 128-bit build (`-DALPHA128`, up to 127 vertices); 64-bi
 is marked "ALPHA128 change". `make` builds both bin/multi_alphadeficit and bin/multi_alphadeficit128. This replaces the
 earlier local copy analysis/multi_alphadeficit128.c. So the "patch not releasable" caveat above no longer applies: the
 proof tier is all 128 (t, b) cases (computer-assisted), 69 of them also checked independently of the 128-bit build.
+
+## Conjecture 1: proof runs via Lemma 5.1 (2026-11-23, `analysis/prove_conj1.py`, `notes/prove_conj1.txt`)
+
+For t = 1..6 and every b whose threshold tree fits in 127 vertices (b <= 28, 21, 17, 14, 12, 10 for t = 1..6), every
+a = 1..p0 computed (v = A, p0 = (|V1| - 1)(|V2| + 1), V1 = class of A): 102 (t, b) pairs, 6,026 trees, 0 mismatches
+with Conjecture 1. 64-bit program for n <= 63, 128-bit build above (2,138 trees, 59 alpha, 2,079 non-alpha); 38 pairs
+lie entirely within 63 vertices. The tree is symmetric in A and B, so Conjecture 1 now holds (computer-assisted) whenever
+min(a, b) <= 28, 21, 17, 14, 12, 10 for t = 1..6. Open: both stars above those bounds. Whole run took about 20 s.
+Period rule rescored from all result files: 9,259 trees, 419 (t, b) pairs, 0 mismatches; 128 pairs proven for all a,
+the other 291 tested at a = 2b, 2b + 1, 2b + 4 only.
